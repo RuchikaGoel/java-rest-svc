@@ -1,0 +1,761 @@
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.209526313-04:00 Build reason(s): CONFIG
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210268204-04:00 CONFIG:
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210278816-04:00 	+ env:
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210283140-04:00 	+ - name: BP_OCI_SOURCE
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210287224-04:00 	+   value: harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210291700-04:00 	+ - name: BP_LIVE_RELOAD_ENABLED
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210294103-04:00 	+   value: "true"
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210296834-04:00 	+ - name: BP_JVM_VERSION
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210299527-04:00 	+   value: "17"
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210302364-04:00 	resources: {}
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210304802-04:00 	- source: {}
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210306956-04:00 	+ source:
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210309236-04:00 	+   blob:
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210312386-04:00 	+     url: http://source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/default/customer-profile/408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778.tar.gz
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.210315824-04:00 Loading registry credentials from service account secrets
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.211305421-04:00 Loading secret for "harbor.ryanbaker.io" from secret "registries-credentials" at location "/var/build-secrets/registries-credentials"
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.211315887-04:00 Loading secret for "registry.tanzu.vmware.com" from secret "registries-credentials" at location "/var/build-secrets/registries-credentials"
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:18.211318686-04:00 Loading cluster credential helpers
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:20.028279518-04:00 Downloading source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/default/customer-profile/408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778.tar.gz...
+customer-profile-build-1-build-pod[prepare] 2024-05-03T12:27:20.034914567-04:00 Successfully downloaded source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/default/customer-profile/408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778.tar.gz in path "/workspace"
+customer-profile-build-1-build-pod[analyze] 2024-05-03T12:27:26.187260524-04:00 Timer: Analyzer started at 2024-05-03T16:27:26Z
+customer-profile-build-1-build-pod[analyze] 2024-05-03T12:27:31.847840940-04:00 Restoring data for SBOM from previous image
+customer-profile-build-1-build-pod[analyze] 2024-05-03T12:27:33.215295654-04:00 Timer: Analyzer ran for 7.027978201s and ended at 2024-05-03T16:27:33Z
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.476305949-04:00 Timer: Builder started at 2024-05-03T16:27:36Z
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.480757834-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.480777008-04:00 Tanzu Buildpack for CA Certificates 3.8.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.480780099-04:00   https://github.com/pivotal-cf/tanzu-ca-certificates
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.481209695-04:00   Launch Helper: Reusing cached layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493747605-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493769912-04:00 Tanzu Buildpack for BellSoft Liberica 9.14.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493772622-04:00   https://github.com/pivotal-cf/tanzu-bellsoft-liberica
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493775502-04:00   Build Configuration:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493778612-04:00     $BP_JVM_JLINK_ARGS           --no-man-pages --no-header-files --strip-debug --compress=1  configure custom link arguments (--output must be omitted)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493888282-04:00     $BP_JVM_JLINK_ENABLED        false                                                        enables running jlink tool to generate custom JRE
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.476711075-04:00 Timer: Restorer started at 2024-05-03T16:27:35Z
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493893972-04:00     $BP_JVM_TYPE                 JRE                                                          the JVM type - JDK or JRE
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.476756764-04:00 Restoring metadata for "tanzu-buildpacks/ca-certificates:helper" from app image
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493897115-04:00     $BP_JVM_VERSION              17                                                           the Java version
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.476876277-04:00 Restoring metadata for "tanzu-buildpacks/bellsoft-liberica:helper" from app image
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:34.448246365-04:00 Warning: Buildpack 'tanzu-buildpacks/dotnet-core-lite@2.15.0' requests deprecated API '0.6'
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493899424-04:00   Launch Configuration:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493901803-04:00     $BPL_DEBUG_ENABLED           false                                                        enables Java remote debugging support
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.477271428-04:00 Restoring metadata for "tanzu-buildpacks/bellsoft-liberica:java-security-properties" from app image
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493903497-04:00     $BPL_DEBUG_PORT              8000                                                         configure the remote debugging port
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493905999-04:00     $BPL_DEBUG_SUSPEND           false                                                        configure whether to suspend execution until a debugger has attached
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493907684-04:00     $BPL_HEAP_DUMP_PATH                                                                       write heap dumps on error to this path
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493909482-04:00     $BPL_JAVA_NMT_ENABLED        true                                                         enables Java Native Memory Tracking (NMT)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493911289-04:00     $BPL_JAVA_NMT_LEVEL          summary                                                      configure level of NMT, summary or detail
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493913424-04:00     $BPL_JFR_ARGS                                                                             configure custom Java Flight Recording (JFR) arguments
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493972981-04:00     $BPL_JFR_ENABLED             false                                                        enables Java Flight Recording (JFR)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493978994-04:00     $BPL_JMX_ENABLED             false                                                        enables Java Management Extensions (JMX)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493981833-04:00     $BPL_JMX_PORT                5000                                                         configure the JMX port
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493984388-04:00     $BPL_JVM_HEAD_ROOM           0                                                            the headroom in memory calculation
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493986793-04:00     $BPL_JVM_LOADED_CLASS_COUNT  35% of classes                                               the number of loaded classes in memory calculation
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:34.457173753-04:00 Warning: Buildpack 'tanzu-buildpacks/nodejs-lite@2.8.0' requests deprecated API '0.6'
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493989492-04:00     $BPL_JVM_THREAD_COUNT        250                                                          the number of threads in memory calculation
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:34.457199851-04:00 Timer: Detector started at 2024-05-03T16:27:34Z
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024625842-04:00 11 of 26 buildpacks participating
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.493991849-04:00     $JAVA_TOOL_OPTIONS                                                                        the JVM launch flags
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024665731-04:00 tanzu-buildpacks/ca-certificates   3.8.0
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024669760-04:00 tanzu-buildpacks/bellsoft-liberica 9.14.0
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024672474-04:00 paketo-buildpacks/syft             1.10.1
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.477891643-04:00 Restoring metadata for "tanzu-buildpacks/bellsoft-liberica:jre" from app image
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024675149-04:00 tanzu-buildpacks/maven             6.17.0
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024677866-04:00 tanzu-buildpacks/watchexec         2.10.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.494009363-04:00     Using Java version 17 from BP_JVM_VERSION
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.477904341-04:00 Restoring metadata for "tanzu-buildpacks/watchexec:watchexec" from app image
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.477906369-04:00 Restoring metadata for "tanzu-buildpacks/spring-boot:helper" from app image
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024680584-04:00 tanzu-buildpacks/executable-jar    6.10.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.497426229-04:00   BellSoft Liberica JDK 17.0.10: Contributing to layer
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024682551-04:00 tanzu-buildpacks/apache-tomcat     7.16.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:36.497478456-04:00     Downloading from https://github.com/bell-sw/Liberica/releases/download/17.0.10+13/bellsoft-jdk17.0.10+13-linux-amd64.tar.gz
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:37.799538578-04:00     Verifying checksum
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024684449-04:00 tanzu-buildpacks/liberty           3.10.0
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.477908313-04:00 Restoring metadata for "tanzu-buildpacks/spring-boot:spring-cloud-bindings" from app image
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:38.713267533-04:00     Expanding to /layers/tanzu-buildpacks_bellsoft-liberica/jdk
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024686156-04:00 tanzu-buildpacks/dist-zip          5.8.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.391347391-04:00     Adding 137 container CA certificates to JVM truststore
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024687882-04:00 tanzu-buildpacks/spring-boot       5.29.0
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.477910013-04:00 Restoring metadata for "tanzu-buildpacks/spring-boot:web-application-type" from app image
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.396453995-04:00     Writing env.build/JAVA_HOME.override
+customer-profile-build-1-build-pod[restore] 2024-05-03T12:27:35.481822292-04:00 Timer: Restorer ran for 3.465192ms and ended at 2024-05-03T16:27:35Z
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024689575-04:00 tanzu-buildpacks/image-labels      4.7.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.396573833-04:00     Writing env.build/JDK_HOME.override
+customer-profile-build-1-build-pod[detect] 2024-05-03T12:27:35.024692169-04:00 Timer: Detector ran for 569.771156ms and ended at 2024-05-03T16:27:35Z
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.397316059-04:00   BellSoft Liberica JRE 17.0.10: Reusing cached layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.398272192-04:00   Launch Helper: Reusing cached layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.398626539-04:00   Java Security Properties: Reusing cached layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.419048861-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.419086566-04:00 Paketo Syft Buildpack 1.10.1
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.419091358-04:00   https://github.com/paketo-buildpacks/syft
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.419342890-04:00     Downloading from https://github.com/anchore/syft/releases/download/v0.41.1/syft_0.41.1_linux_amd64.tar.gz
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:43.980081069-04:00     Verifying checksum
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.749933654-04:00     Writing env.build/SYFT_CHECK_FOR_APP_UPDATE.default
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763351529-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763449666-04:00 Tanzu Buildpack for Maven 6.17.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763456266-04:00   https://github.com/pivotal-cf/tanzu-maven
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763460284-04:00   Build Configuration:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763463612-04:00     $BP_EXCLUDE_FILES                                                                            colon separated list of glob patterns, matched source files are removed
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763472888-04:00     $BP_INCLUDE_FILES                                                                            colon separated list of glob patterns, matched source files are included
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763477737-04:00     $BP_JAVA_INSTALL_NODE                 false                                                  whether to install Yarn/Node binaries based on the presence of a package.json or yarn.lock file
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763481584-04:00     $BP_MAVEN_ACTIVE_PROFILES                                                                    the active profiles (comma separated: such as: p1,!p2,?p3) to pass to Maven
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763484406-04:00     $BP_MAVEN_ADDITIONAL_BUILD_ARGUMENTS                                                         the additionnal arguments (appended to BP_MAVEN_BUILD_ARGUMENTS) to pass to Maven
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763488824-04:00     $BP_MAVEN_BUILD_ARGUMENTS             -Dmaven.test.skip=true --no-transfer-progress package  the arguments to pass to Maven
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763491646-04:00     $BP_MAVEN_BUILT_ARTIFACT              target/*.[ejw]ar                                       the built application artifact explicitly.  Supersedes $BP_MAVEN_BUILT_MODULE
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763495207-04:00     $BP_MAVEN_BUILT_MODULE                                                                       the module to find application artifact in
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763498866-04:00     $BP_MAVEN_DAEMON_ENABLED              false                                                  use maven daemon
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763502438-04:00     $BP_MAVEN_POM_FILE                    pom.xml                                                the location of the main pom.xml file, relative to the application root
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763514932-04:00     $BP_MAVEN_SETTINGS_PATH                                                                      the path to a Maven settings file
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763518105-04:00     $BP_MAVEN_VERSION                     3                                                      the Maven version
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:44.763521061-04:00     $BP_NODE_PROJECT_PATH                                                                        configure a project subdirectory to look for `package.json` and `yarn.lock` files
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:45.066087461-04:00     Creating cache directory /home/cnb/.m2
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:45.067232088-04:00   Compiled Application: Contributing to layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:45.067519943-04:00     Executing mvnw --batch-mode -Dmaven.test.skip=true --no-transfer-progress package
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:45.106756276-04:00         % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:45.107332509-04:00                                        Dload  Upload   Total   Spent    Left  Speed
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:45.238487467-04:00         0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 26 62547   26 16530    0     0   139k      0 --:--:-- --:--:-- --:--:--  139k100 62547  100 62547    0     0   463k      0 --:--:-- --:--:-- --:--:--  462k
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:48.527540032-04:00       [INFO] Scanning for projects...
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:50.727524993-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:50.729499401-04:00       [INFO] --------------------< com.example:customer-profile >--------------------
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:50.730409765-04:00       [INFO] Building customer-profile 0.0.1-SNAPSHOT
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:50.731202310-04:00       [INFO]   from pom.xml
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:50.732064412-04:00       [INFO] --------------------------------[ jar ]---------------------------------
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:58.989707964-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:58.989999881-04:00       [INFO] --- resources:3.3.1:resources (default-resources) @ customer-profile ---
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:59.587603734-04:00       [INFO] Copying 1 resource from src/main/resources to target/classes
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:59.626361529-04:00       [INFO] Copying 1 resource from src/main/resources to target/classes
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:59.628574582-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:27:59.629423420-04:00       [INFO] --- compiler:3.11.0:compile (default-compile) @ customer-profile ---
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:00.408558820-04:00       [INFO] Changes detected - recompiling the module! :source
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:00.414848219-04:00       [INFO] Compiling 8 source files with javac [debug release 17] to target/classes
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.611618225-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.611693636-04:00       [INFO] --- resources:3.3.1:testResources (default-testResources) @ customer-profile ---
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.616729256-04:00       [INFO] Not copying test resources
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.616765958-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.618772364-04:00       [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ customer-profile ---
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.661521193-04:00       [INFO] Not compiling test sources
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.661548663-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:02.661553676-04:00       [INFO] --- surefire:3.1.2:test (default-test) @ customer-profile ---
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:03.875528708-04:00       [INFO] Tests are skipped.
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:03.876952956-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:03.876971230-04:00       [INFO] --- jar:3.3.0:jar (default-jar) @ customer-profile ---
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:04.488947037-04:00       [INFO] Building jar: /workspace/target/customer-profile-0.0.1-SNAPSHOT.jar
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:04.563233581-04:00       [INFO] 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:04.565121361-04:00       [INFO] --- spring-boot:3.2.4:repackage (repackage) @ customer-profile ---
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.009237725-04:00       [INFO] Replacing main artifact /workspace/target/customer-profile-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.009872444-04:00       [INFO] The original artifact has been renamed to /workspace/target/customer-profile-0.0.1-SNAPSHOT.jar.original
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.010251196-04:00       [INFO] ------------------------------------------------------------------------
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.010275159-04:00       [INFO] BUILD SUCCESS
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.010279941-04:00       [INFO] ------------------------------------------------------------------------
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.012538884-04:00       [INFO] Total time:  17.510 s
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.013499667-04:00       [INFO] Finished at: 2024-05-03T16:28:06Z
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.013739900-04:00       [INFO] ------------------------------------------------------------------------
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:06.062309675-04:00       
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.295308414-04:00   Removing source code
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.304139918-04:00   Restoring application artifact
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.468352424-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.468386359-04:00 Tanzu Buildpack for Watchexec 2.10.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.468391147-04:00   https://github.com/pivotal-cf/tanzu-watchexec
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.477268620-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.477310540-04:00 Tanzu Buildpack for Executable JAR 6.10.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:07.477315730-04:00   https://github.com/pivotal-cf/tanzu-executable-jar
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.458481215-04:00   Class Path: Contributing to layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.458521631-04:00     Writing env/CLASSPATH.delim
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.459377986-04:00     Writing env/CLASSPATH.prepend
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.459393196-04:00   Process types:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.459398897-04:00     executable-jar: java org.springframework.boot.loader.launch.JarLauncher (direct)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.459402598-04:00     reload:         watchexec -r --shell=none -- java org.springframework.boot.loader.launch.JarLauncher (direct)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.459405672-04:00     task:           java org.springframework.boot.loader.launch.JarLauncher (direct)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.459408879-04:00     web:            java org.springframework.boot.loader.launch.JarLauncher (direct)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.476755503-04:00 SKIPPED: `Main-Class` found in `META-INF/MANIFEST.MF`, skipping build
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487450509-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487490826-04:00 Tanzu Buildpack for Spring Boot 5.29.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487495936-04:00   https://github.com/pivotal-cf/tanzu-spring-boot
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487500093-04:00   Build Configuration:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487503641-04:00     $BP_SPRING_CLOUD_BINDINGS_DISABLED   false  whether to contribute Spring Boot cloud bindings support
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487507113-04:00     $BP_SPRING_CLOUD_BINDINGS_VERSION    1      default version of Spring Cloud Bindings library to contribute
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487510581-04:00   Launch Configuration:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487514482-04:00     $BPL_SPRING_CLOUD_BINDINGS_DISABLED  false  whether to auto-configure Spring Boot environment properties from bindings
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.487517650-04:00     $BPL_SPRING_CLOUD_BINDINGS_ENABLED   true   Deprecated - whether to auto-configure Spring Boot environment properties from bindings
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.761217364-04:00   Creating slices from layers index
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.761824774-04:00     dependencies (49.8 MB)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.762730727-04:00     spring-boot-loader (394.9 KB)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.762745635-04:00     snapshot-dependencies (0.0 B)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.762759665-04:00     application (26.7 KB)
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.763843370-04:00   Launch Helper: Reusing cached layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766920946-04:00   Spring Cloud Bindings 2.0.2: Reusing cached layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766949329-04:00   Web Application Type: Contributing to layer
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766954446-04:00     Servlet web application detected
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766957485-04:00     Writing env.launch/BPL_JVM_THREAD_COUNT.default
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766961362-04:00   4 application slices
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766964305-04:00   Image labels:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766967855-04:00     org.opencontainers.image.title
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766971195-04:00     org.opencontainers.image.version
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.766974374-04:00     org.springframework.boot.version
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.787978565-04:00 
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788018979-04:00 Tanzu Buildpack for Image Labels 4.7.0
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788024266-04:00   https://github.com/pivotal-cf/tanzu-image-labels
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788027816-04:00   Build Configuration:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788034490-04:00     $BP_IMAGE_LABELS                                                                                                                                                      arbitrary image labels
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788039369-04:00     $BP_OCI_AUTHORS                                                                                                                                                       the org.opencontainers.image.authors image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788042347-04:00     $BP_OCI_CREATED                                                                                                                                                       the org.opencontainers.image.created image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788045770-04:00     $BP_OCI_DESCRIPTION                                                                                                                                                   the org.opencontainers.image.description image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788048883-04:00     $BP_OCI_DOCUMENTATION                                                                                                                                                 the org.opencontainers.image.documentation image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788052235-04:00     $BP_OCI_LICENSES                                                                                                                                                      the org.opencontainers.image.licenses image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788055111-04:00     $BP_OCI_REF_NAME                                                                                                                                                      the org.opencontainers.image.ref.name image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788058389-04:00     $BP_OCI_REVISION                                                                                                                                                      the org.opencontainers.image.revision image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788062043-04:00     $BP_OCI_SOURCE         harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778  the org.opencontainers.image.source image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788065740-04:00     $BP_OCI_TITLE                                                                                                                                                         the org.opencontainers.image.title image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788068552-04:00     $BP_OCI_URL                                                                                                                                                           the org.opencontainers.image.url image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788082996-04:00     $BP_OCI_VENDOR                                                                                                                                                        the org.opencontainers.image.vendor image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788086154-04:00     $BP_OCI_VERSION                                                                                                                                                       the org.opencontainers.image.version image label
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788098512-04:00   Image labels:
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.788101958-04:00     org.opencontainers.image.source
+customer-profile-build-1-build-pod[build] 2024-05-03T12:28:08.806581453-04:00 Timer: Builder ran for 32.330258625s and ended at 2024-05-03T16:28:08Z
+customer-profile-pf9lp-test-pod[prepare] 2024-05-03T12:26:51.940927448-04:00 2024/05/03 16:26:51 Entrypoint initialization
+customer-profile-pf9lp-test-pod[place-scripts] 2024-05-03T12:26:52.840197235-04:00 2024/05/03 16:26:52 Decoded script /tekton/scripts/script-0-gzgf4
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.410780775-04:00 .gitignore
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.410818304-04:00 .mvn/wrapper/maven-wrapper.properties
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.410838707-04:00 .tanzuignore
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.410871331-04:00 DATABASE.md
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.411226722-04:00 DEPLOYING.md
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.411329036-04:00 LICENSE
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.411475432-04:00 README.md
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.411487800-04:00 accelerator-info.yaml
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.411677738-04:00 catalog/catalog-info.yaml
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.411902228-04:00 config/workload.yaml
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.413256525-04:00 docker-compose.yaml
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.413481388-04:00 mvnw
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.413536253-04:00 mvnw.cmd
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.413579192-04:00 pom.xml
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.413634926-04:00 src/main/java/com/example/customerprofile/Application.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.414606031-04:00 src/main/java/com/example/customerprofile/api/CustomerProfileController.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.414743828-04:00 src/main/java/com/example/customerprofile/data/CustomerProfileEntity.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.414842324-04:00 src/main/java/com/example/customerprofile/data/CustomerProfileRepository.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.414892191-04:00 src/main/java/com/example/customerprofile/domain/CustomerProfileChangeRequest.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.415330463-04:00 src/main/java/com/example/customerprofile/domain/CustomerProfileCreateRequest.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.415352250-04:00 src/main/java/com/example/customerprofile/domain/CustomerProfileResponse.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.415437985-04:00 src/main/java/com/example/customerprofile/domain/CustomerProfileService.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.415444759-04:00 src/main/resources/application.properties
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.415537907-04:00 src/main/resources/db/migration/V1.0__create_customer_profile_table.sql
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.415631456-04:00 src/test/java/com/example/customerprofile/ApplicationTests.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.416045748-04:00 src/test/java/com/example/customerprofile/api/CustomerProfileControllerTest.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.418302897-04:00 src/test/java/com/example/customerprofile/data/CustomerProfileRepositoryTest.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.418515849-04:00 src/test/java/com/example/customerprofile/domain/CustomerProfileServiceTest.java
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.418591116-04:00 src/test/resources/application-test.properties
+customer-profile-pf9lp-test-pod[step-test] 2024-05-03T12:26:56.419449082-04:00 /tmp/tmp.zSJNx5ngBZ
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:15.165472616-04:00 Reusing layers from image 'harbor.ryanbaker.io/tap-apps/customer-profile-default@sha256:2efe452c77a53036c77855b7dd55276a14366e566432d2dc50e9faaac7e283be'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.174924290-04:00 Timer: Exporter started at 2024-05-03T16:28:19Z
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.176332454-04:00 Reusing layer 'tanzu-buildpacks/ca-certificates:helper'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.182321658-04:00 Reusing layer 'tanzu-buildpacks/bellsoft-liberica:helper'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.187327527-04:00 Reusing layer 'tanzu-buildpacks/bellsoft-liberica:java-security-properties'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.191633706-04:00 Reusing layer 'tanzu-buildpacks/bellsoft-liberica:jre'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.202767776-04:00 Reusing layer 'tanzu-buildpacks/watchexec:watchexec'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.217736736-04:00 Reusing layer 'tanzu-buildpacks/executable-jar:classpath'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.226929577-04:00 Reusing layer 'tanzu-buildpacks/spring-boot:helper'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.236943930-04:00 Reusing layer 'tanzu-buildpacks/spring-boot:spring-cloud-bindings'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.244692050-04:00 Reusing layer 'tanzu-buildpacks/spring-boot:web-application-type'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.262479348-04:00 Reusing layer 'buildpacksio/lifecycle:launch.sbom'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.702676703-04:00 Reusing 4/5 app layer(s)
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.702727611-04:00 Adding 1/5 app layer(s)
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.719237205-04:00 Reusing layer 'buildpacksio/lifecycle:launcher'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.731762800-04:00 Adding layer 'buildpacksio/lifecycle:config'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.739477072-04:00 Reusing layer 'buildpacksio/lifecycle:process-types'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.751824611-04:00 Adding label 'io.buildpacks.lifecycle.metadata'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.765173632-04:00 Adding label 'io.buildpacks.build.metadata'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.765246562-04:00 Adding label 'io.buildpacks.project.metadata'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.765274898-04:00 Adding label 'org.opencontainers.image.title'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.765278580-04:00 Adding label 'org.opencontainers.image.version'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.765281886-04:00 Adding label 'org.springframework.boot.version'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.766871974-04:00 Adding label 'org.opencontainers.image.source'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.772628908-04:00 Setting default process type 'reload'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:19.772671790-04:00 Timer: Saving harbor.ryanbaker.io/tap-apps/customer-profile-default... started at 2024-05-03T16:28:19Z
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:26.246960137-04:00 *** Images (sha256:dbf621b6964df839a583390eaa7e7dd47f43e7d6a0ddfea09fcc77d113f610ec):
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:26.247001241-04:00       harbor.ryanbaker.io/tap-apps/customer-profile-default
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:26.247007023-04:00       harbor.ryanbaker.io/tap-apps/customer-profile-default:b1.20240503.162709
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:26.247021274-04:00 Timer: Saving harbor.ryanbaker.io/tap-apps/customer-profile-default... ran for 6.477161566s and ended at 2024-05-03T16:28:26Z
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:26.247024577-04:00 Timer: Exporter ran for 7.07222726s and ended at 2024-05-03T16:28:26Z
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:26.247436056-04:00 Timer: Cache started at 2024-05-03T16:28:26Z
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:28.391333156-04:00 Adding cache layer 'tanzu-buildpacks/bellsoft-liberica:jdk'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:29.134615659-04:00 Adding cache layer 'paketo-buildpacks/syft:syft'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:29.479923351-04:00 Adding cache layer 'tanzu-buildpacks/maven:application'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:30.501478436-04:00 Adding cache layer 'tanzu-buildpacks/maven:cache'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:30.634176123-04:00 Adding cache layer 'buildpacksio/lifecycle:cache.sbom'
+customer-profile-build-1-build-pod[export] 2024-05-03T12:28:30.635128939-04:00 Timer: Cache ran for 4.387656355s and ended at 2024-05-03T16:28:30Z
+customer-profile-build-1-build-pod[completion] 2024-05-03T12:28:32.727239861-04:00 Pushing signature to: harbor.ryanbaker.io/tap-apps/customer-profile-default
+customer-profile-build-1-build-pod[completion] 2024-05-03T12:28:36.083100460-04:00 Build successful
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[prepare] 2024-05-03T12:29:00.034144215-04:00 2024/05/03 16:29:00 Entrypoint initialization
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[sidecar-sleep] 2024-05-03T12:29:00.991331155-04:00 idling
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[step-workspace-setup] 2024-05-03T12:29:01.836911334-04:00 initialized results directory /workspace/scan-results
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[step-workspace-setup] 2024-05-03T12:29:01.836987603-04:00 initialized cache directory /workspace/.cache
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[step-workspace-setup] 2024-05-03T12:29:01.837608837-04:00 initialized tmp directory /workspace/tmp
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[step-workspace-setup] 2024-05-03T12:29:01.838548605-04:00 initialized cnb-sboms directory /workspace/cnb-sboms
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[sidecar-sleep] 2024-05-03T12:29:04.687516646-04:00 terminated
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[sidecar-sleep] 2024-05-03T12:29:04.688141031-04:00 exiting
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[prepare] 2024-05-03T12:29:03.884658330-04:00 2024/05/03 16:29:03 Entrypoint initialization
+customer-profile-trivy-scan2b3e3112945b713b125527b23d7026a2-pod[sidecar-sleep] 2024-05-03T12:29:05.027123111-04:00 2024/05/03 16:29:05 Exiting...
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[sidecar-sleep] 2024-05-03T12:29:05.459669714-04:00 idling
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-cred-helper] 2024-05-03T12:29:06.919223584-04:00 2024/05/03 16:29:06 registry: harbor.ryanbaker.io
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-cred-helper] 2024-05-03T12:29:06.920485768-04:00 2024/05/03 16:29:06 saving credentials to /cred-helper
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-write-certs] 2024-05-03T12:29:07.108698611-04:00 2024/05/03 16:29:07 certs from TRUSTED_CA_CERTS saved to /cred-helper/trusted-cas.crt
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:08.356336934-04:00 2024-05-03T16:29:08Z	INFO	Adding schema version to the DB repository for backward compatibility	repository="ghcr.io/aquasecurity/trivy-db:2"
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:08.356414788-04:00 2024-05-03T16:29:08Z	INFO	Adding schema version to the Java DB repository for backward compatibility	repository="ghcr.io/aquasecurity/trivy-java-db:1"
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:08.367053028-04:00 2024-05-03T16:29:08Z	INFO	Need to update DB
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:08.367095184-04:00 2024-05-03T16:29:08Z	INFO	Downloading DB...	repository="ghcr.io/aquasecurity/trivy-db:2"
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:11.656724655-04:00 2024-05-03T16:29:11Z	INFO	Vulnerability scanning is enabled
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:12.626652956-04:00 2024-05-03T16:29:12Z	WARN	Third-party SBOM may lead to inaccurate vulnerability detection
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:12.628196169-04:00 2024-05-03T16:29:12Z	WARN	Recommend using Trivy to generate SBOMs
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:13.822568493-04:00 2024-05-03T16:29:13Z	INFO	Java DB Repository	repository=ghcr.io/aquasecurity/trivy-java-db:1
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:13.822610041-04:00 2024-05-03T16:29:13Z	INFO	Downloading the Java DB...
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:14.047584402-04:00 2024-05-03T16:29:14Z	WARN	Third-party SBOM may lead to inaccurate vulnerability detection
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:14.047631950-04:00 2024-05-03T16:29:14Z	WARN	Recommend using Trivy to generate SBOMs
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:32.698141045-04:00 2024-05-03T16:29:32Z	INFO	The Java DB is cached for 3 days. If you want to update the database more frequently, the '--reset' flag clears the DB cache.
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:32.920534787-04:00 2024-05-03T16:29:32Z	INFO	Detected OS	family="ubuntu" version="22.04"
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:32.920583672-04:00 2024-05-03T16:29:32Z	INFO	[ubuntu] Detecting vulnerabilities...	os_version="22.04" pkg_num=216
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:32.925930172-04:00 2024-05-03T16:29:32Z	INFO	Number of language-specific files	num=5
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:32.926116757-04:00 2024-05-03T16:29:32Z	INFO	[gobinary] Detecting vulnerabilities...
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[step-trivy-generate-report] 2024-05-03T12:29:32.948238821-04:00 2024-05-03T16:29:32Z	INFO	[jar] Detecting vulnerabilities...
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[sidecar-sleep] 2024-05-03T12:29:35.161722441-04:00 terminated
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[sidecar-sleep] 2024-05-03T12:29:35.162423113-04:00 exiting
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[prepare] 2024-05-03T12:29:35.201412286-04:00 2024/05/03 16:29:35 Entrypoint initialization
+customer-profile-trivy-scan-7m2pc-pwtzc-scan-task-pod[sidecar-sleep] 2024-05-03T12:29:35.599420437-04:00 2024/05/03 16:29:35 Exiting...
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[sidecar-sleep] 2024-05-03T12:29:36.863346056-04:00 idling
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-write-certs] 2024-05-03T12:29:39.373714771-04:00 2024/05/03 16:29:39 certs from TRUSTED_CA_CERTS saved to /cred-helper/trusted-cas.crt
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-cred-helper] 2024-05-03T12:29:39.590652797-04:00 2024/05/03 16:29:39 registry: harbor.ryanbaker.io
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-cred-helper] 2024-05-03T12:29:39.590970162-04:00 2024/05/03 16:29:39 saving credentials to /cred-helper
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.752103480-04:00 2024/05/03 16:29:39 RESULTS_PUSH_URL harbor.ryanbaker.io/tap-apps/customer-profile-default-scan-results:ae0d8732-c1d7-4938-ab51-40232a7eb06d
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.752173844-04:00 2024/05/03 16:29:39 RESULTS_FOLDER /workspace/scan-results
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.752180797-04:00 2024/05/03 16:29:39 RESULTS_LOCK_OUTPUT /tekton/results/imgpkg-lock-output
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754031819-04:00 2024/05/03 16:29:39 REGISTRY_CA_CERT_DATA environment variable not set.
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754071538-04:00 2024/05/03 16:29:39 REGISTRY_SKIP_VERIFY_CERTS environment variable not set.
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754077306-04:00 2024/05/03 16:29:39 REGISTRY_SKIP_VERIFY_CERTS false
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754081894-04:00 2024/05/03 16:29:39 REGISTRY_INSECURE environment variable not set.
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754086004-04:00 2024/05/03 16:29:39 REGISTRY_INSECURE false
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754089492-04:00 2024/05/03 16:29:39 REGISTRY_ACTIVE_KEYCHAINS environment variable is not set.
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754093027-04:00 2024/05/03 16:29:39 REGISTRY_RETRY_COUNT environment variable not set.
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.754096384-04:00 2024/05/03 16:29:39 REGISTRY_RETRY_COUNT 5
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.770759384-04:00 2024/05/03 16:29:39 dir: .
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.771102018-04:00 2024/05/03 16:29:39 dir: .imgpkg
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.771130593-04:00 2024/05/03 16:29:39 file: .imgpkg/images.yml
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:39.771136147-04:00 2024/05/03 16:29:39 file: scan.cdx.json
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[step-publisher] 2024-05-03T12:29:43.123302845-04:00 2024/05/03 16:29:43 Writing imageURL harbor.ryanbaker.io/tap-apps/customer-profile-default-scan-results@sha256:1715e9444ca27562957439d1a248bf385cc289b3f3c78af81923944d8a5e499e to file /tekton/results/imgpkg-lock-output
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[sidecar-sleep] 2024-05-03T12:29:44.409910668-04:00 terminated
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[sidecar-sleep] 2024-05-03T12:29:44.410146697-04:00 exiting
+customer-profile-trivy-scan-7m2pc-pwtzc-publish-task-pod[sidecar-sleep] 2024-05-03T12:29:44.755026422-04:00 2024/05/03 16:29:44 Exiting...
+customer-profile-config-writer-928gs-pod[prepare] 2024-05-03T12:29:54.454738548-04:00 2024/05/03 16:29:54 Entrypoint initialization
+customer-profile-config-writer-928gs-pod[place-scripts] 2024-05-03T12:29:55.811435338-04:00 2024/05/03 16:29:55 Decoded script /tekton/scripts/script-0-44lwp
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.837532396-04:00 ++ mktemp -d
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.840394634-04:00 + cd /tmp/tmp.42YSVIzcZH
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.841993168-04:00 + base64 --decode
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.842619152-04:00 + echo -e eyJkZWxpdmVyeS55bWwiOiJhcGlWZXJzaW9uOiBzZXJ2aW5nLmtuYXRpdmUuZGV2L3YxXG5raW5kOiBTZXJ2aWNlXG5tZXRhZGF0YTpcbiAgbmFtZTogY3VzdG9tZXItcHJvZmlsZVxuICBhbm5vdGF0aW9uczpcbiAgICBvb3RiLmFwcHMudGFuenUudm13YXJlLmNvbS9zZXJ2aWNlYmluZGluZy13b3JrbG9hZDogXCJ0cnVlXCJcbiAgICBvb3RiLmFwcHMudGFuenUudm13YXJlLmNvbS9hcGlkZXNjcmlwdG9yLXJlZjogXCJ0cnVlXCJcbiAgICBrYXBwLmsxNHMuaW8vY2hhbmdlLXJ1bGU6IHVwc2VydCBhZnRlciB1cHNlcnRpbmcgc2VydmljZWJpbmRpbmcuaW8vU2VydmljZUJpbmRpbmdzXG4gIGxhYmVsczpcbiAgICBhcHAua3ViZXJuZXRlcy5pby9wYXJ0LW9mOiBjdXN0b21lci1wcm9maWxlXG4gICAgYXBwcy50YW56dS52bXdhcmUuY29tL2F1dG8tY29uZmlndXJlLWFjdHVhdG9yczogXCJ0cnVlXCJcbiAgICBhcHBzLnRhbnp1LnZtd2FyZS5jb20vaGFzLXRlc3RzOiBcInRydWVcIlxuICAgIGFwcHMudGFuenUudm13YXJlLmNvbS93b3JrbG9hZC10eXBlOiB3ZWJcbiAgICBhcHAua3ViZXJuZXRlcy5pby9jb21wb25lbnQ6IHJ1blxuICAgIGNhcnRvLnJ1bi93b3JrbG9hZC1uYW1lOiBjdXN0b21lci1wcm9maWxlXG5zcGVjOlxuICB0ZW1wbGF0ZTpcbiAgICBtZXRhZGF0YTpcbiAgICAgIGFubm90YXRpb25zOlxuICAgICAgICBhcHBzLnRhbnp1LnZtd2FyZS5jb20vY29ycmVsYXRpb25pZDogaGFyYm9yLnJ5YW5iYWtlci5pby9zb3VyY2UtY29kZS9sb2NhbC1zb3VyY2U6ZGVmYXVsdC1jdXN0b21lci1wcm9maWxlP3N1Yl9wYXRoPS9cbiAgICAgICAgYXBwcy50YW56dS52bXdhcmUuY29tL2RlYnVnOiBcInRydWVcIlxuICAgICAgICBhcHBzLnRhbnp1LnZtd2FyZS5jb20vbGl2ZS11cGRhdGU6IFwidHJ1ZVwiXG4gICAgICAgIGF1dG9zY2FsaW5nLmtuYXRpdmUuZGV2L21heFNjYWxlOiBcIjFcIlxuICAgICAgICBhdXRvc2NhbGluZy5rbmF0aXZlLmRldi9taW5TY2FsZTogXCIxXCJcbiAgICAgICAgYm9vdC5zcHJpbmcuaW8vYWN0dWF0b3I6IGh0dHA6Ly86ODA4MS9hY3R1YXRvclxuICAgICAgICBib290LnNwcmluZy5pby92ZXJzaW9uOiAzLjIuNFxuICAgICAgICBjb252ZW50aW9ucy5jYXJ0by5ydW4vYXBwbGllZC1jb252ZW50aW9uczogfC1cbiAgICAgICAgICBkZXZlbG9wZXItY29udmVudGlvbnMvZGVidWctY29udmVudGlvblxuICAgICAgICAgIGRldmVsb3Blci1jb252ZW50aW9ucy9saXZlLXVwZGF0ZS1jb252ZW50aW9uXG4gICAgICAgICAgZGV2ZWxvcGVyLWNvbnZlbnRpb25zL2FkZC1zb3VyY2UtaW1hZ2UtbGFiZWxcbiAgICAgICAgICBzcHJpbmctYm9vdC1jb252ZW50aW9uL2F1dG8tY29uZmlndXJlLWFjdHVhdG9ycy1jaGVja1xuICAgICAgICAgIHNwcmluZy1ib290LWNvbnZlbnRpb24vaXMtbmF0aXZlLWFwcC1jaGVja1xuICAgICAgICAgIHNwcmluZy1ib290LWNvbnZlbnRpb24vaXMtcHJvbWV0aGV1cy1lbmFibGVkLWNoZWNrXG4gICAgICAgICAgc3ByaW5nLWJvb3QtY29udmVudGlvbi9zcHJpbmctYm9vdFxuICAgICAgICAgIHNwcmluZy1ib290LWNvbnZlbnRpb24vc3ByaW5nLWJvb3QtZ3JhY2VmdWwtc2h1dGRvd25cbiAgICAgICAgICBzcHJpbmctYm9vdC1jb252ZW50aW9uL3NwcmluZy1ib290LXdlYlxuICAgICAgICAgIHNwcmluZy1ib290LWNvbnZlbnRpb24vc3ByaW5nLWJvb3QtYWN0dWF0b3JcbiAgICAgICAgICBzcHJpbmctYm9vdC1jb252ZW50aW9uL3NwcmluZy1ib290LXByb21ldGhldXMtZW5hYmxlZFxuICAgICAgICAgIHNwcmluZy1ib290LWNvbnZlbnRpb24vc3ByaW5nLWJvb3QtYWN0dWF0b3ItcHJvYmVzXG4gICAgICAgICAgc3ByaW5nLWJvb3QtY29udmVudGlvbi9hcHAtbGl2ZS12aWV3LWFwcGZsYXZvdXItY2hlY2tcbiAgICAgICAgICBzcHJpbmctYm9vdC1jb252ZW50aW9uL2FwcC1saXZlLXZpZXctY29ubmVjdG9yLWJvb3RcbiAgICAgICAgICBzcHJpbmctYm9vdC1jb252ZW50aW9uL2FwcC1saXZlLXZpZXctYXBwZmxhdm91cnMtYm9vdFxuICAgICAgICAgIHNwcmluZy1ib290LWNvbnZlbnRpb24vc2VydmljZS1pbnRlbnQtcG9zdGdyZXNcbiAgICAgICAgZGV2ZWxvcGVyLmFwcHMudGFuenUudm13YXJlLmNvbS9pbWFnZS1zb3VyY2UtZGlnZXN0OiBoYXJib3IucnlhbmJha2VyLmlvL3NvdXJjZS1jb2RlL2xvY2FsLXNvdXJjZTpkZWZhdWx0LWN1c3RvbWVyLXByb2ZpbGVAc2hhMjU2OjQwODM4MWEyZTE3MjUxZTQ0OTdkZjc5N2NhMTJiMzEzOTBmODM1ZGFjZjM1MWQyN2MyODk4OTkwZjAwZTQ3NzhcbiAgICAgICAgZGV2ZWxvcGVyLmNvbnZlbnRpb25zL3RhcmdldC1jb250YWluZXJzOiB3b3JrbG9hZFxuICAgICAgICBsb2NhbC1zb3VyY2UtcHJveHkuYXBwcy50YW56dS52bXdhcmUuY29tOiBoYXJib3IucnlhbmJha2VyLmlvL3NvdXJjZS1jb2RlL2xvY2FsLXNvdXJjZTpkZWZhdWx0LWN1c3RvbWVyLXByb2ZpbGVAc2hhMjU2OjQwODM4MWEyZTE3MjUxZTQ0OTdkZjc5N2NhMTJiMzEzOTBmODM1ZGFjZjM1MWQyN2MyODk4OTkwZjAwZTQ3NzhcbiAgICAgICAgcHJvbWV0aGV1cy5pby9wYXRoOiAvYWN0dWF0b3IvcHJvbWV0aGV1c1xuICAgICAgICBwcm9tZXRoZXVzLmlvL3BvcnQ6IFwiODA4MVwiXG4gICAgICAgIHByb21ldGhldXMuaW8vc2NyYXBlOiBcInRydWVcIlxuICAgICAgICBzZXJ2aWNlcy5jb252ZW50aW9ucy5jYXJ0by5ydW4vcG9zdGdyZXM6IHBvc3RncmVzcWwvNDIuNi4yXG4gICAgICBsYWJlbHM6XG4gICAgICAgIGFwcC5rdWJlcm5ldGVzLmlvL2NvbXBvbmVudDogcnVuXG4gICAgICAgIGFwcC5rdWJlcm5ldGVzLmlvL3BhcnQtb2Y6IGN1c3RvbWVyLXByb2ZpbGVcbiAgICAgICAgYXBwcy50YW56dS52bXdhcmUuY29tL2F1dG8tY29uZmlndXJlLWFjdHVhdG9yczogXCJ0cnVlXCJcbiAgICAgICAgYXBwcy50YW56dS52bXdhcmUuY29tL2hhcy10ZXN0czogXCJ0cnVlXCJcbiAgICAgICAgYXBwcy50YW56dS52bXdhcmUuY29tL3dvcmtsb2FkLXR5cGU6IHdlYlxuICAgICAgICBjYXJ0by5ydW4vd29ya2xvYWQtbmFtZTogY3VzdG9tZXItcHJvZmlsZVxuICAgICAgICBjb252ZW50aW9ucy5jYXJ0by5ydW4vZnJhbWV3b3JrOiBzcHJpbmctYm9vdFxuICAgICAgICBzZXJ2aWNlcy5jb252ZW50aW9ucy5jYXJ0by5ydW4vcG9zdGdyZXM6IHdvcmtsb2FkXG4gICAgICAgIHRhbnp1LmFwcC5saXZlLnZpZXc6IFwidHJ1ZVwiXG4gICAgICAgIHRhbnp1LmFwcC5saXZlLnZpZXcuYXBwbGljYXRpb24uYWN0dWF0b3IucGF0aDogYWN0dWF0b3JcbiAgICAgICAgdGFuenUuYXBwLmxpdmUudmlldy5hcHBsaWNhdGlvbi5hY3R1YXRvci5wb3J0OiBcIjgwODFcIlxuICAgICAgICB0YW56dS5hcHAubGl2ZS52aWV3LmFwcGxpY2F0aW9uLmZsYXZvdXJzOiBzcHJpbmctYm9vdFxuICAgICAgICB0YW56dS5hcHAubGl2ZS52aWV3LmFwcGxpY2F0aW9uLm5hbWU6IGN1c3RvbWVyLXByb2ZpbGVcbiAgICBzcGVjOlxuICAgICAgY29udGFpbmVyczpcbiAgICAgIC0gZW52OlxuICAgICAgICAtIG5hbWU6IEJQTF9ERUJVR19FTkFCTEVEXG4gICAgICAgICAgdmFsdWU6IFwidHJ1ZVwiXG4gICAgICAgIC0gbmFtZTogQlBMX0RFQlVHX1BPUlRcbiAgICAgICAgICB2YWx1ZTogXCI5MDA1XCJcbiAgICAgICAgLSBuYW1lOiBKQVZBX1RPT0xfT1BUSU9OU1xuICAgICAgICAgIHZhbHVlOiAtRG1hbmFnZW1lbnQuZW5kcG9pbnQuaGVhbHRoLnByb2Jlcy5hZGQtYWRkaXRpb25hbC1wYXRocz1cInRydWVcIiAtRG1hbmFnZW1lbnQuZW5kcG9pbnQuaGVhbHRoLnNob3ctZGV0YWlscz1cImFsd2F5c1wiIC1EbWFuYWdlbWVudC5lbmRwb2ludHMud2ViLmJhc2UtcGF0aD1cIi9hY3R1YXRvclwiIC1EbWFuYWdlbWVudC5lbmRwb2ludHMud2ViLmV4cG9zdXJlLmluY2x1ZGU9XCIqXCIgLURtYW5hZ2VtZW50LmhlYWx0aC5wcm9iZXMuZW5hYmxlZD1cInRydWVcIiAtRG1hbmFnZW1lbnQuc2VydmVyLnBvcnQ9XCI4MDgxXCIgLURzZXJ2ZXIucG9ydD1cIjgwODBcIiAtRHNlcnZlci5zaHV0ZG93bi5ncmFjZS1wZXJpb2Q9XCIyNHNcIlxuICAgICAgICBpbWFnZTogaGFyYm9yLnJ5YW5iYWtlci5pby90YXAtYXBwcy9jdXN0b21lci1wcm9maWxlLWRlZmF1bHRAc2hhMjU2OmRiZjYyMWI2OTY0ZGY4MzlhNTgzMzkwZWFhN2U3ZGQ0N2Y0M2U3ZDZhMGRkZmVhMDlmY2M3N2QxMTNmNjEwZWNcbiAgICAgICAgbGl2ZW5lc3NQcm9iZTpcbiAgICAgICAgICBodHRwR2V0OlxuICAgICAgICAgICAgcGF0aDogL2xpdmV6XG4gICAgICAgICAgICBwb3J0OiA4MDgwXG4gICAgICAgICAgICBzY2hlbWU6IEhUVFBcbiAgICAgICAgbmFtZTogd29ya2xvYWRcbiAgICAgICAgcG9ydHM6XG4gICAgICAgIC0gY29udGFpbmVyUG9ydDogODA4MFxuICAgICAgICAgIHByb3RvY29sOiBUQ1BcbiAgICAgICAgcmVhZGluZXNzUHJvYmU6XG4gICAgICAgICAgaHR0cEdldDpcbiAgICAgICAgICAgIHBhdGg6IC9yZWFkeXpcbiAgICAgICAgICAgIHBvcnQ6IDgwODBcbiAgICAgICAgICAgIHNjaGVtZTogSFRUUFxuICAgICAgICByZXNvdXJjZXM6IHt9XG4gICAgICAgIHNlY3VyaXR5Q29udGV4dDpcbiAgICAgICAgICBhbGxvd1ByaXZpbGVnZUVzY2FsYXRpb246IGZhbHNlXG4gICAgICAgICAgY2FwYWJpbGl0aWVzOlxuICAgICAgICAgICAgZHJvcDpcbiAgICAgICAgICAgIC0gQUxMXG4gICAgICAgICAgcnVuQXNOb25Sb290OiB0cnVlXG4gICAgICAgICAgcnVuQXNVc2VyOiAxMDAwXG4gICAgICAgICAgc2VjY29tcFByb2ZpbGU6XG4gICAgICAgICAgICB0eXBlOiBSdW50aW1lRGVmYXVsdFxuICAgICAgICBzdGFydHVwUHJvYmU6XG4gICAgICAgICAgaHR0cEdldDpcbiAgICAgICAgICAgIHBhdGg6IC9yZWFkeXpcbiAgICAgICAgICAgIHBvcnQ6IDgwODBcbiAgICAgICAgICAgIHNjaGVtZTogSFRUUFxuICAgICAgc2VydmljZUFjY291bnROYW1lOiBkZWZhdWx0XG4iLCJrYXBwLWNvbmZpZy55bWwiOiJhcGlWZXJzaW9uOiBrYXBwLmsxNHMuaW8vdjFhbHBoYTFcbmtpbmQ6IENvbmZpZ1xucmViYXNlUnVsZXM6XG4tIHBhdGg6XG4gIC0gbWV0YWRhdGFcbiAgLSBhbm5vdGF0aW9uc1xuICAtIHNlcnZpbmcua25hdGl2ZS5kZXYvY3JlYXRvclxuICB0eXBlOiBjb3B5XG4gIHNvdXJjZXM6XG4gIC0gbmV3XG4gIC0gZXhpc3RpbmdcbiAgcmVzb3VyY2VNYXRjaGVyczpcbiAgLSBhcGlWZXJzaW9uS2luZE1hdGNoZXI6XG4gICAgICBhcGlWZXJzaW9uOiBzZXJ2aW5nLmtuYXRpdmUuZGV2L3YxXG4gICAgICBraW5kOiBTZXJ2aWNlXG4tIHBhdGg6XG4gIC0gbWV0YWRhdGFcbiAgLSBhbm5vdGF0aW9uc1xuICAtIHNlcnZpbmcua25hdGl2ZS5kZXYvbGFzdE1vZGlmaWVyXG4gIHR5cGU6IGNvcHlcbiAgc291cmNlczpcbiAgLSBuZXdcbiAgLSBleGlzdGluZ1xuICByZXNvdXJjZU1hdGNoZXJzOlxuICAtIGFwaVZlcnNpb25LaW5kTWF0Y2hlcjpcbiAgICAgIGFwaVZlcnNpb246IHNlcnZpbmcua25hdGl2ZS5kZXYvdjFcbiAgICAgIGtpbmQ6IFNlcnZpY2VcbndhaXRSdWxlczpcbi0gcmVzb3VyY2VNYXRjaGVyczpcbiAgLSBhcGlWZXJzaW9uS2luZE1hdGNoZXI6XG4gICAgICBhcGlWZXJzaW9uOiBzZXJ2aW5nLmtuYXRpdmUuZGV2L3YxXG4gICAgICBraW5kOiBTZXJ2aWNlXG4gIGNvbmRpdGlvbk1hdGNoZXJzOlxuICAtIHR5cGU6IFJlYWR5XG4gICAgc3RhdHVzOiBcIlRydWVcIlxuICAgIHN1Y2Nlc3M6IHRydWVcbiAgLSB0eXBlOiBSZWFkeVxuICAgIHN0YXR1czogXCJGYWxzZVwiXG4gICAgZmFpbHVyZTogdHJ1ZVxub3duZXJzaGlwTGFiZWxSdWxlczpcbi0gcGF0aDpcbiAgLSBzcGVjXG4gIC0gdGVtcGxhdGVcbiAgLSBtZXRhZGF0YVxuICAtIGxhYmVsc1xuICByZXNvdXJjZU1hdGNoZXJzOlxuICAtIGFwaVZlcnNpb25LaW5kTWF0Y2hlcjpcbiAgICAgIGFwaVZlcnNpb246IHNlcnZpbmcua25hdGl2ZS5kZXYvdjFcbiAgICAgIGtpbmQ6IFNlcnZpY2VcbiIsInNlcnZpY2VjbGFpbXMueW1sIjoiYXBpVmVyc2lvbjoga2FwcC5rMTRzLmlvL3YxYWxwaGExXG5raW5kOiBDb25maWdcbndhaXRSdWxlczpcbi0gY29uZGl0aW9uTWF0Y2hlcnM6XG4gIC0gdHlwZTogU2VydmljZUF2YWlsYWJsZVxuICAgIHN0YXR1czogXCJGYWxzZVwiXG4gICAgZmFpbHVyZTogdHJ1ZVxuICAtIHR5cGU6IFNlcnZpY2VBdmFpbGFibGVcbiAgICBzdGF0dXM6IFwiVHJ1ZVwiXG4gICAgc3VjY2VzczogdHJ1ZVxuICByZXNvdXJjZU1hdGNoZXJzOlxuICAtIGFwaVZlcnNpb25LaW5kTWF0Y2hlcjpcbiAgICAgIGFwaVZlcnNpb246IHNlcnZpY2ViaW5kaW5nLmlvL3YxYWxwaGEzXG4gICAgICBraW5kOiBTZXJ2aWNlQmluZGluZ1xuLS0tXG5hcGlWZXJzaW9uOiBzZXJ2aWNlYmluZGluZy5pby92MWFscGhhM1xua2luZDogU2VydmljZUJpbmRpbmdcbm1ldGFkYXRhOlxuICBuYW1lOiBjdXN0b21lci1wcm9maWxlLWRhdGFiYXNlXG4gIGFubm90YXRpb25zOlxuICAgIGxvY2FsLXNvdXJjZS1wcm94eS5hcHBzLnRhbnp1LnZtd2FyZS5jb206IGhhcmJvci5yeWFuYmFrZXIuaW8vc291cmNlLWNvZGUvbG9jYWwtc291cmNlOmRlZmF1bHQtY3VzdG9tZXItcHJvZmlsZUBzaGEyNTY6NDA4MzgxYTJlMTcyNTFlNDQ5N2RmNzk3Y2ExMmIzMTM5MGY4MzVkYWNmMzUxZDI3YzI4OTg5OTBmMDBlNDc3OFxuICAgIGF1dG9zY2FsaW5nLmtuYXRpdmUuZGV2L21pblNjYWxlOiBcIjFcIlxuICAgIGthcHAuazE0cy5pby9jaGFuZ2UtZ3JvdXA6IHNlcnZpY2ViaW5kaW5nLmlvL1NlcnZpY2VCaW5kaW5nc1xuICBsYWJlbHM6XG4gICAgYXBwLmt1YmVybmV0ZXMuaW8vcGFydC1vZjogY3VzdG9tZXItcHJvZmlsZVxuICAgIGFwcHMudGFuenUudm13YXJlLmNvbS9hdXRvLWNvbmZpZ3VyZS1hY3R1YXRvcnM6IFwidHJ1ZVwiXG4gICAgYXBwcy50YW56dS52bXdhcmUuY29tL2hhcy10ZXN0czogXCJ0cnVlXCJcbiAgICBhcHBzLnRhbnp1LnZtd2FyZS5jb20vd29ya2xvYWQtdHlwZTogd2ViXG4gICAgYXBwLmt1YmVybmV0ZXMuaW8vY29tcG9uZW50OiBydW5cbiAgICBjYXJ0by5ydW4vd29ya2xvYWQtbmFtZTogY3VzdG9tZXItcHJvZmlsZVxuc3BlYzpcbiAgbmFtZTogZGF0YWJhc2VcbiAgc2VydmljZTpcbiAgICBhcGlWZXJzaW9uOiBzZXJ2aWNlcy5hcHBzLnRhbnp1LnZtd2FyZS5jb20vdjFhbHBoYTFcbiAgICBraW5kOiBDbGFzc0NsYWltXG4gICAgbmFtZTogY3VzdG9tZXItZGF0YWJhc2VcbiAgd29ya2xvYWQ6XG4gICAgYXBpVmVyc2lvbjogc2VydmluZy5rbmF0aXZlLmRldi92MVxuICAgIGtpbmQ6IFNlcnZpY2VcbiAgICBuYW1lOiBjdXN0b21lci1wcm9maWxlXG4ifQ==
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.847690895-04:00 ++ cat files.json
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.848743924-04:00 ++ jq -r 'to_entries | .[] | @sh "mkdir -p $(dirname \(.key)) && echo \(.value) > \(.key)"'
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886151555-04:00 + eval 'mkdir -p $(dirname '\''delivery.yml'\'') && echo '\''apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886202714-04:00 kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886207781-04:00 metadata:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886212198-04:00   name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886215680-04:00   annotations:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886224447-04:00     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886228383-04:00     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886232176-04:00     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886235509-04:00   labels:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886239496-04:00     app.kubernetes.io/part-of: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886243372-04:00     apps.tanzu.vmware.com/auto-configure-actuators: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886247164-04:00     apps.tanzu.vmware.com/has-tests: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886250936-04:00     apps.tanzu.vmware.com/workload-type: web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886254699-04:00     app.kubernetes.io/component: run
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886258748-04:00     carto.run/workload-name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886262510-04:00 spec:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886266493-04:00   template:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886270367-04:00     metadata:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886274297-04:00       annotations:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886279004-04:00         apps.tanzu.vmware.com/correlationid: harbor.ryanbaker.io/source-code/local-source:default-customer-profile?sub_path=/
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886283814-04:00         apps.tanzu.vmware.com/debug: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886287566-04:00         apps.tanzu.vmware.com/live-update: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886296376-04:00         autoscaling.knative.dev/maxScale: "1"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886299942-04:00         autoscaling.knative.dev/minScale: "1"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886303544-04:00         boot.spring.io/actuator: http://:8081/actuator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886307208-04:00         boot.spring.io/version: 3.2.4
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886319834-04:00         conventions.carto.run/applied-conventions: |-
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886324045-04:00           developer-conventions/debug-convention
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886327520-04:00           developer-conventions/live-update-convention
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886331483-04:00           developer-conventions/add-source-image-label
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886336988-04:00           spring-boot-convention/auto-configure-actuators-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886340434-04:00           spring-boot-convention/is-native-app-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886343825-04:00           spring-boot-convention/is-prometheus-enabled-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886347687-04:00           spring-boot-convention/spring-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886351103-04:00           spring-boot-convention/spring-boot-graceful-shutdown
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886354503-04:00           spring-boot-convention/spring-boot-web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886359964-04:00           spring-boot-convention/spring-boot-actuator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886363405-04:00           spring-boot-convention/spring-boot-prometheus-enabled
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886366900-04:00           spring-boot-convention/spring-boot-actuator-probes
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886370396-04:00           spring-boot-convention/app-live-view-appflavour-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886373750-04:00           spring-boot-convention/app-live-view-connector-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886377224-04:00           spring-boot-convention/app-live-view-appflavours-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886380641-04:00           spring-boot-convention/service-intent-postgres
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886384717-04:00         developer.apps.tanzu.vmware.com/image-source-digest: harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886388239-04:00         developer.conventions/target-containers: workload
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886392437-04:00         local-source-proxy.apps.tanzu.vmware.com: harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886395887-04:00         prometheus.io/path: /actuator/prometheus
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886399343-04:00         prometheus.io/port: "8081"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886402785-04:00         prometheus.io/scrape: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886406485-04:00         services.conventions.carto.run/postgres: postgresql/42.6.2
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886409963-04:00       labels:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886413369-04:00         app.kubernetes.io/component: run
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886416798-04:00         app.kubernetes.io/part-of: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886421885-04:00         apps.tanzu.vmware.com/auto-configure-actuators: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886425314-04:00         apps.tanzu.vmware.com/has-tests: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886428757-04:00         apps.tanzu.vmware.com/workload-type: web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886432237-04:00         carto.run/workload-name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886435720-04:00         conventions.carto.run/framework: spring-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886439065-04:00         services.conventions.carto.run/postgres: workload
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886442588-04:00         tanzu.app.live.view: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886445824-04:00         tanzu.app.live.view.application.actuator.path: actuator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886449097-04:00         tanzu.app.live.view.application.actuator.port: "8081"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886451777-04:00         tanzu.app.live.view.application.flavours: spring-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886454753-04:00         tanzu.app.live.view.application.name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886457743-04:00     spec:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886461525-04:00       containers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886464714-04:00       - env:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886467589-04:00         - name: BPL_DEBUG_ENABLED
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886473801-04:00           value: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886477517-04:00         - name: BPL_DEBUG_PORT
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886480777-04:00           value: "9005"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886484227-04:00         - name: JAVA_TOOL_OPTIONS
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886489212-04:00           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886496792-04:00         image: harbor.ryanbaker.io/tap-apps/customer-profile-default@sha256:dbf621b6964df839a583390eaa7e7dd47f43e7d6a0ddfea09fcc77d113f610ec
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886501018-04:00         livenessProbe:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886504072-04:00           httpGet:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886507214-04:00             path: /livez
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886510504-04:00             port: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886513774-04:00             scheme: HTTP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886516624-04:00         name: workload
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886519624-04:00         ports:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886522637-04:00         - containerPort: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886525937-04:00           protocol: TCP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886528897-04:00         readinessProbe:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886531959-04:00           httpGet:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886535022-04:00             path: /readyz
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886538118-04:00             port: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886541101-04:00             scheme: HTTP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886544259-04:00         resources: {}
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886547396-04:00         securityContext:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886550535-04:00           allowPrivilegeEscalation: false
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886554114-04:00           capabilities:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886558368-04:00             drop:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886562150-04:00             - ALL
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886565218-04:00           runAsNonRoot: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886567987-04:00           runAsUser: 1000
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886571223-04:00           seccompProfile:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886575074-04:00             type: RuntimeDefault
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886578173-04:00         startupProbe:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886581699-04:00           httpGet:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886584842-04:00             path: /readyz
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886588111-04:00             port: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886591830-04:00             scheme: HTTP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886595250-04:00       serviceAccountName: default
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886598504-04:00 '\'' > '\''delivery.yml'\''
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886601626-04:00 mkdir -p $(dirname '\''kapp-config.yml'\'') && echo '\''apiVersion: kapp.k14s.io/v1alpha1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886605642-04:00 kind: Config
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886608957-04:00 rebaseRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886612265-04:00 - path:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886615856-04:00   - metadata
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886619484-04:00   - annotations
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886622745-04:00   - serving.knative.dev/creator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886625799-04:00   type: copy
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886629387-04:00   sources:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886632468-04:00   - new
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886635367-04:00   - existing
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886638761-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886642106-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886645409-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886648692-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886651920-04:00 - path:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886655351-04:00   - metadata
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886658372-04:00   - annotations
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886661328-04:00   - serving.knative.dev/lastModifier
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886664839-04:00   type: copy
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886671207-04:00   sources:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886674335-04:00   - new
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886685867-04:00   - existing
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886689009-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886692221-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886695457-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886698536-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886701554-04:00 waitRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886704695-04:00 - resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886707743-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886711004-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886714152-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886717341-04:00   conditionMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886720940-04:00   - type: Ready
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886724175-04:00     status: "True"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886727525-04:00     success: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886731284-04:00   - type: Ready
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886735011-04:00     status: "False"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886739104-04:00     failure: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886742481-04:00 ownershipLabelRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886745948-04:00 - path:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886749248-04:00   - spec
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886752859-04:00   - template
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886756827-04:00   - metadata
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886760839-04:00   - labels
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886764454-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886767879-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886771094-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886774496-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886777751-04:00 '\'' > '\''kapp-config.yml'\''
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886780908-04:00 mkdir -p $(dirname '\''serviceclaims.yml'\'') && echo '\''apiVersion: kapp.k14s.io/v1alpha1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886784292-04:00 kind: Config
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886787792-04:00 waitRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886793755-04:00 - conditionMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886796959-04:00   - type: ServiceAvailable
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886800737-04:00     status: "False"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886804372-04:00     failure: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886807719-04:00   - type: ServiceAvailable
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886811781-04:00     status: "True"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886815309-04:00     success: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886818555-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886821971-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886825683-04:00       apiVersion: servicebinding.io/v1alpha3
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886829126-04:00       kind: ServiceBinding
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886832158-04:00 ---
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886835496-04:00 apiVersion: servicebinding.io/v1alpha3
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886838837-04:00 kind: ServiceBinding
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886842437-04:00 metadata:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886845900-04:00   name: customer-profile-database
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886849063-04:00   annotations:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886853336-04:00     local-source-proxy.apps.tanzu.vmware.com: harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886856854-04:00     autoscaling.knative.dev/minScale: "1"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886860838-04:00     kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886864788-04:00   labels:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886868502-04:00     app.kubernetes.io/part-of: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886872016-04:00     apps.tanzu.vmware.com/auto-configure-actuators: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886875953-04:00     apps.tanzu.vmware.com/has-tests: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886879701-04:00     apps.tanzu.vmware.com/workload-type: web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886884162-04:00     app.kubernetes.io/component: run
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886887689-04:00     carto.run/workload-name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886894965-04:00 spec:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886898241-04:00   name: database
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886901915-04:00   service:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886905369-04:00     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886909119-04:00     kind: ClassClaim
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886912249-04:00     name: customer-database
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886915640-04:00   workload:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886919174-04:00     apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886923097-04:00     kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886926281-04:00     name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.886968952-04:00 '\'' > '\''serviceclaims.yml'\'''
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.888094476-04:00 +++ dirname delivery.yml
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.889549522-04:00 ++ mkdir -p .
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.893899794-04:00 ++ echo 'apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894206687-04:00 kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894216234-04:00 metadata:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894220419-04:00   name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894223652-04:00   annotations:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894227594-04:00     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894230963-04:00     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894234913-04:00     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894238340-04:00   labels:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894242396-04:00     app.kubernetes.io/part-of: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894245868-04:00     apps.tanzu.vmware.com/auto-configure-actuators: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894249618-04:00     apps.tanzu.vmware.com/has-tests: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894252786-04:00     apps.tanzu.vmware.com/workload-type: web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894255983-04:00     app.kubernetes.io/component: run
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894259560-04:00     carto.run/workload-name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.894263048-04:00 spec:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895214998-04:00   template:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895224671-04:00     metadata:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895228156-04:00       annotations:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895232168-04:00         apps.tanzu.vmware.com/correlationid: harbor.ryanbaker.io/source-code/local-source:default-customer-profile?sub_path=/
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895235660-04:00         apps.tanzu.vmware.com/debug: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895239671-04:00         apps.tanzu.vmware.com/live-update: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895243184-04:00         autoscaling.knative.dev/maxScale: "1"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895314908-04:00         autoscaling.knative.dev/minScale: "1"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895319768-04:00         boot.spring.io/actuator: http://:8081/actuator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895322930-04:00         boot.spring.io/version: 3.2.4
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895326051-04:00         conventions.carto.run/applied-conventions: |-
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895329181-04:00           developer-conventions/debug-convention
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895332196-04:00           developer-conventions/live-update-convention
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895335501-04:00           developer-conventions/add-source-image-label
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895339232-04:00           spring-boot-convention/auto-configure-actuators-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895342525-04:00           spring-boot-convention/is-native-app-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895346314-04:00           spring-boot-convention/is-prometheus-enabled-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895350030-04:00           spring-boot-convention/spring-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895353416-04:00           spring-boot-convention/spring-boot-graceful-shutdown
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895356810-04:00           spring-boot-convention/spring-boot-web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895360078-04:00           spring-boot-convention/spring-boot-actuator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895363369-04:00           spring-boot-convention/spring-boot-prometheus-enabled
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895366894-04:00           spring-boot-convention/spring-boot-actuator-probes
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895378824-04:00           spring-boot-convention/app-live-view-appflavour-check
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895382349-04:00           spring-boot-convention/app-live-view-connector-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895385545-04:00           spring-boot-convention/app-live-view-appflavours-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895388760-04:00           spring-boot-convention/service-intent-postgres
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895392563-04:00         developer.apps.tanzu.vmware.com/image-source-digest: harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895395757-04:00         developer.conventions/target-containers: workload
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895399821-04:00         local-source-proxy.apps.tanzu.vmware.com: harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895403365-04:00         prometheus.io/path: /actuator/prometheus
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895406781-04:00         prometheus.io/port: "8081"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895410305-04:00         prometheus.io/scrape: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895414441-04:00         services.conventions.carto.run/postgres: postgresql/42.6.2
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895418313-04:00       labels:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895422126-04:00         app.kubernetes.io/component: run
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895425487-04:00         app.kubernetes.io/part-of: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895428713-04:00         apps.tanzu.vmware.com/auto-configure-actuators: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895432135-04:00         apps.tanzu.vmware.com/has-tests: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895435425-04:00         apps.tanzu.vmware.com/workload-type: web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895438701-04:00         carto.run/workload-name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895442044-04:00         conventions.carto.run/framework: spring-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895445340-04:00         services.conventions.carto.run/postgres: workload
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895448708-04:00         tanzu.app.live.view: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895452129-04:00         tanzu.app.live.view.application.actuator.path: actuator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895455415-04:00         tanzu.app.live.view.application.actuator.port: "8081"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895458812-04:00         tanzu.app.live.view.application.flavours: spring-boot
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895462165-04:00         tanzu.app.live.view.application.name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895465479-04:00     spec:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895468924-04:00       containers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895472267-04:00       - env:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895475589-04:00         - name: BPL_DEBUG_ENABLED
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895479513-04:00           value: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895483711-04:00         - name: BPL_DEBUG_PORT
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895487358-04:00           value: "9005"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895491018-04:00         - name: JAVA_TOOL_OPTIONS
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895495908-04:00           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895499875-04:00         image: harbor.ryanbaker.io/tap-apps/customer-profile-default@sha256:dbf621b6964df839a583390eaa7e7dd47f43e7d6a0ddfea09fcc77d113f610ec
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895518479-04:00         livenessProbe:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895522337-04:00           httpGet:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895526075-04:00             path: /livez
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895529865-04:00             port: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895533820-04:00             scheme: HTTP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895540898-04:00         name: workload
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895544578-04:00         ports:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895548534-04:00         - containerPort: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895555033-04:00           protocol: TCP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895558617-04:00         readinessProbe:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895562123-04:00           httpGet:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895565911-04:00             path: /readyz
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895569399-04:00             port: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895573198-04:00             scheme: HTTP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895576860-04:00         resources: {}
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895580342-04:00         securityContext:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895583773-04:00           allowPrivilegeEscalation: false
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895586818-04:00           capabilities:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895589887-04:00             drop:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895593381-04:00             - ALL
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895596758-04:00           runAsNonRoot: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895600588-04:00           runAsUser: 1000
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895604060-04:00           seccompProfile:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895607486-04:00             type: RuntimeDefault
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895610309-04:00         startupProbe:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895613197-04:00           httpGet:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895616523-04:00             path: /readyz
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895619921-04:00             port: 8080
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895622931-04:00             scheme: HTTP
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895625947-04:00       serviceAccountName: default
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895629205-04:00 '
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.895636962-04:00 +++ dirname kapp-config.yml
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.898100422-04:00 ++ mkdir -p .
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899346874-04:00 ++ echo 'apiVersion: kapp.k14s.io/v1alpha1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899372247-04:00 kind: Config
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899377117-04:00 rebaseRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899380537-04:00 - path:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899384293-04:00   - metadata
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899387801-04:00   - annotations
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899410737-04:00   - serving.knative.dev/creator
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899414704-04:00   type: copy
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899418082-04:00   sources:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899421497-04:00   - new
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899424383-04:00   - existing
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899427849-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899431010-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899434799-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899438425-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899441556-04:00 - path:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899444695-04:00   - metadata
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899447855-04:00   - annotations
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899455673-04:00   - serving.knative.dev/lastModifier
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899459293-04:00   type: copy
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899463048-04:00   sources:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899466394-04:00   - new
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899469857-04:00   - existing
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899473405-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899477737-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899481536-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899484541-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899488411-04:00 waitRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899491482-04:00 - resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899494869-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899498308-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899501653-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899504599-04:00   conditionMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899508382-04:00   - type: Ready
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899511648-04:00     status: "True"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899514842-04:00     success: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899517915-04:00   - type: Ready
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899521078-04:00     status: "False"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899524572-04:00     failure: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899535337-04:00 ownershipLabelRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899538418-04:00 - path:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899541698-04:00   - spec
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899545437-04:00   - template
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899548879-04:00   - metadata
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899552401-04:00   - labels
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899555810-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899562188-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899565724-04:00       apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899569111-04:00       kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899572290-04:00 '
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.899877190-04:00 +++ dirname serviceclaims.yml
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.903453377-04:00 ++ mkdir -p .
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906734589-04:00 ++ echo 'apiVersion: kapp.k14s.io/v1alpha1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906762234-04:00 kind: Config
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906767033-04:00 waitRules:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906771003-04:00 - conditionMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906775552-04:00   - type: ServiceAvailable
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906778505-04:00     status: "False"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906781549-04:00     failure: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906785060-04:00   - type: ServiceAvailable
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906789192-04:00     status: "True"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906792999-04:00     success: true
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906796076-04:00   resourceMatchers:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906799174-04:00   - apiVersionKindMatcher:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906802680-04:00       apiVersion: servicebinding.io/v1alpha3
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906806009-04:00       kind: ServiceBinding
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906810535-04:00 ---
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906813774-04:00 apiVersion: servicebinding.io/v1alpha3
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906816966-04:00 kind: ServiceBinding
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906820440-04:00 metadata:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906823395-04:00   name: customer-profile-database
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906826447-04:00   annotations:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906830438-04:00     local-source-proxy.apps.tanzu.vmware.com: harbor.ryanbaker.io/source-code/local-source:default-customer-profile@sha256:408381a2e17251e4497df797ca12b31390f835dacf351d27c2898990f00e4778
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906833836-04:00     autoscaling.knative.dev/minScale: "1"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906837490-04:00     kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906840875-04:00   labels:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906844303-04:00     app.kubernetes.io/part-of: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906847792-04:00     apps.tanzu.vmware.com/auto-configure-actuators: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906851103-04:00     apps.tanzu.vmware.com/has-tests: "true"
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906854162-04:00     apps.tanzu.vmware.com/workload-type: web
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906857558-04:00     app.kubernetes.io/component: run
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906860905-04:00     carto.run/workload-name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906864154-04:00 spec:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906867575-04:00   name: database
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906871077-04:00   service:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906874928-04:00     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906878050-04:00     kind: ClassClaim
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906881587-04:00     name: customer-database
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906886677-04:00   workload:
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906890498-04:00     apiVersion: serving.knative.dev/v1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906893693-04:00     kind: Service
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906896646-04:00     name: customer-profile
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906899857-04:00 '
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.906911038-04:00 + mkdir -p .imgpkg
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909460866-04:00 + echo '---
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909483024-04:00 apiVersion: imgpkg.carvel.dev/v1alpha1
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909487682-04:00 kind: ImagesLock'
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909495287-04:00 + imgpkg_params=
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909875611-04:00 + [[ ! -z '' ]]
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909916394-04:00 + export IMGPKG_ENABLE_IAAS_AUTH=false
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909928441-04:00 + IMGPKG_ENABLE_IAAS_AUTH=false
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.909932442-04:00 + imgpkg push -b harbor.ryanbaker.io/tap-apps/customer-profile-default-bundle:ae0d8732-c1d7-4938-ab51-40232a7eb06d -f .
+customer-profile-config-writer-928gs-pod[step-main] 2024-05-03T12:29:59.919058196-04:00 IMGPKG_ENABLE_IAAS_AUTH environment variable will be deprecated, please use the flag --activate-keychain to activate the needed keychains

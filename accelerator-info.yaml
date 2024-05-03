@@ -1,0 +1,33 @@
+id: 93f76055-d18d-47cf-9f83-48bf062533ab
+timestamp: 2024-05-03T16:20:12.969Z
+source: VSCODE
+username: gruchika
+options:
+  projectName: java-rest-service
+  artifactId: customer-profile
+  groupId: com.example
+  packageName: com.example.customerprofile
+  buildTool: maven
+  exposeOpenAPIEndpoint: false
+  apiSystem: profile-management
+  apiOwner: customer-relations-department
+  apiDescription: Manage customer profiles
+  databaseType: postgres
+  databaseName: customer-database
+  databaseMigrationTool: flyway
+  databaseIntegrationTestType: in-memory
+  liveUpdateIDESupport: true
+  includeBuildToolWrapper: true
+accelerator:
+  name: java-rest-service
+fragments:
+  - name: build-wrapper-gradle
+  - name: build-wrapper-maven
+  - name: live-update
+  - name: spring-boot-database
+  - name: spring-boot-h2
+  - name: spring-boot-mysql
+  - name: spring-boot-postgresql
+  - name: tap-workload
+  - name: testcontainers-mysql
+  - name: testcontainers-postgresql
